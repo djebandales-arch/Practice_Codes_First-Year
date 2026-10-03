@@ -1,0 +1,18 @@
+#Student Scholarship Approver
+
+age = int(input("What is your age?, "))
+is_enrolled = (bool(input("Are you currently enrolled in school?: ")== "yes"))
+average = float(input("What is your average?, "))
+
+if age >= 16 and average >= 80 and is_enrolled == True:
+        print("You are eligible for the scholarship.")
+        if average >= 95:
+            print("You are eligible for full scholarship.")
+        elif 90 <= average < 95:
+            print("You are eligible for partial scholarship.")
+        elif 85 <= average < 90:
+            print("You are eligible for basic scholarship.")
+        if average < 85:
+            print("Rejected: Average too low.")
+else:
+    print("You are not eligible for the scholarship.")
