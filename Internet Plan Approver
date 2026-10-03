@@ -1,0 +1,14 @@
+age = int(input("WHAT IS YOUR AGE? --> "))
+is_employed = bool(input("ARE YOU EMPLOYED? --> ")== "Yes")
+monthly_income = float(input("WHAT IS YOUR MONTHLY INCOME? --> "))
+
+if age >= 18 and is_employed == True:
+    print("Accepted: You are eligible for loan.")
+    if monthly_income >= 30000:
+        print("Premium Plan")
+    elif 20000 <= monthly_income < 30000:
+        print("Standard Plann")
+    elif monthly_income < 200000:
+        print("Basic Plan")
+else:
+    print("Rejected: Fails baseline criteria.")
