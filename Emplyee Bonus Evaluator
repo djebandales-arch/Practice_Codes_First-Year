@@ -1,0 +1,49 @@
+#This is a program that calculates an employee's annual bonus based on monthly salary, years of service, performance
+#rating, #and attendance.
+
+print("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n--Welcome to the Employee Bonus Evaluator--\n---------------------------------------------\n")
+
+employee_name = str(input("\nEMPLOYEE NAME: \n"))
+age = int(input("AGE: \n"))
+monthly_salary = float(input("MONTHLY SALARY: \n"))
+years_of_service = float(input("YEARS OF SERVICE: \n"))
+performance_rating = float(input("PERFORMANCE RATING: \n"))
+has_perfect_attendance = bool(input("DO YOU HAVE PERFECT ATTENDANCE? \n")== "Yes")
+
+bonus_rate = 0.0
+addbonus = 0
+bonus_total = 0
+if age >= 18 and years_of_service >= 1 and performance_rating >= 70:
+    print("----You Are Eligible for Bonus!----")
+    if performance_rating >= 90 and has_perfect_attendance == True:
+        bonus_rate = 0.15
+        bonus_total = monthly_salary * bonus_rate
+        print("Your bonus total is", bonus_total)
+        if has_perfect_attendance == True:
+                addbonus += 1000
+                bonus_total = monthly_salary * bonus_rate + addbonus
+                print("Your bonus total is", bonus_total)
+    elif performance_rating >= 80:
+            bonus_rate = 0.10
+            bonus_total = monthly_salary * bonus_rate
+            print("Your bonus total is", bonus_total)
+            if has_perfect_attendance == True:
+                addbonus += 1000
+                bonus_total = monthly_salary * bonus_rate + addbonus
+                print("Your bonus total is", bonus_total)
+    else:
+            bonus_rate = 0.05
+            bonus_total = monthly_salary * bonus_rate
+            print("Your bonus total is", bonus_total)
+            
+            if has_perfect_attendance == True:
+                addbonus += 1000
+                bonus_total = monthly_salary * bonus_rate + addbonus
+                print("Your bonus total is", bonus_total)
+else:
+    print("----Not eligible for bonus----")
+
+print("=============================")
+print("Employee Name:", employee_name)
+print("Bonus Rate:", bonus_rate)
+print("Bonus Amount:", bonus_total)
